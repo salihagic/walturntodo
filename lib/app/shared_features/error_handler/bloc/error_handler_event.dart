@@ -1,4 +1,4 @@
-import 'package:walturntodo/_all.dart';
+import 'package:abstract_bloc/abstract_bloc.dart';
 
 abstract class ErrorHandlerEvent {}
 

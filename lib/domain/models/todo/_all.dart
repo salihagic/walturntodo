@@ -1,2 +1,2 @@
 export 'entities/_all.dart';
-export 'responses/_all.dart';
+export 'mappers/_all.dart';

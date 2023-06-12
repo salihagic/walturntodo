@@ -2,16 +2,15 @@ import 'package:walturntodo/_all.dart';
 import 'package:abstract_bloc/abstract_bloc.dart';
 
 class ErrorHandlerBloc extends Bloc<ErrorHandlerEvent, ErrorHandlerState> {
-  final IRestApiClient restApiClient;
-  late StreamSubscription _restApiClientSubscription;
+  late StreamSubscription _exceptionsStreamSubscription;
 
   ErrorHandlerBloc({
-    required this.restApiClient,
+    required ExceptionHandler exceptionsStream,
   }) : super(ErrorHandlerState(status: ErrorHandlerStateStatus.clean)) {
     on<ErrorHandlerAddNewExceptionEvent>(_addNewException);
 
-    _restApiClientSubscription =
-        restApiClient.exceptionHandler.exceptions.stream.listen((exception) {
+    _exceptionsStreamSubscription =
+        exceptionsStream.exceptions.stream.listen((exception) {
       add(ErrorHandlerAddNewExceptionEvent(exception: exception));
     });
   }
@@ -28,7 +27,7 @@ class ErrorHandlerBloc extends Bloc<ErrorHandlerEvent, ErrorHandlerState> {
 
   @override
   Future<void> close() {
-    _restApiClientSubscription.cancel();
+    _exceptionsStreamSubscription.cancel();
 
     return super.close();
   }

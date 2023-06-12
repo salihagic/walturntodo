@@ -16,6 +16,7 @@ class Startup {
     CommonServicesConfiguration.configure();
     await StorageConfiguration.configure();
     await ApiClientConfiguration.configure();
+    await DataSourcesConfiguration.configure();
     await RepositoriesConfiguration.configure();
     BlocsConfiguration.configure();
   }

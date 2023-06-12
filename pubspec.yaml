@@ -24,7 +24,7 @@ dependencies:
   intl: ^0.18.0
   json_annotation: ^4.8.1
   octo_image: ^1.0.2
-  rest_api_client: ^2.1.6
+  rest_api_client: ^2.1.7
   storage_repository: ^1.1.10
 
 dev_dependencies:

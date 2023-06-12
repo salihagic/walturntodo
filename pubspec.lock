@@ -801,10 +801,10 @@ packages:
     dependency: "direct main"
     description:
       name: rest_api_client
-      sha256: "5d57ac7dbf867b7b84ee2c9e722e8c70b0151882cdde620025e3410f34a78052"
+      sha256: "85473a95a9f209da5e24e2b817ec4d385c76ae2ee3488bd72b34d9c113770b8f"
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.6"
+    version: "2.1.7"
   rxdart:
     dependency: transitive
     description:

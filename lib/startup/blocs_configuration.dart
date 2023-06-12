@@ -21,7 +21,7 @@ class BlocsConfiguration {
     );
     services.registerSingleton(
       ErrorHandlerBloc(
-        restApiClient: services.get<IRestApiClient>(),
+        exceptionsStream: services.get<ExceptionHandler>(),
       ),
     );
     services.registerSingleton(
@@ -31,5 +31,11 @@ class BlocsConfiguration {
     );
   }
 
-  static void configureScoped() {}
+  static void configureScoped() {
+    services.registerFactory(
+      () => TodosBloc(
+        todosRepository: services.get<TodosRepository>(),
+      ),
+    );
+  }
 }

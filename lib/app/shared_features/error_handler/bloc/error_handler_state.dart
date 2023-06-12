@@ -1,4 +1,4 @@
-import 'package:walturntodo/_all.dart';
+import 'package:abstract_bloc/abstract_bloc.dart';
 
 enum ErrorHandlerStateStatus {
   clean,
@@ -10,9 +10,7 @@ class ErrorHandlerState {
   BaseException? exception;
 
   bool get showMessage =>
-      status == ErrorHandlerStateStatus.dirty &&
-      exception != null &&
-      !(exception?.silent ?? false);
+      status == ErrorHandlerStateStatus.dirty && exception != null;
 
   ErrorHandlerState({
     required this.status,
