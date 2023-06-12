@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "902299801611",
+    "project_id": "walturntodo",
+    "storage_bucket": "walturntodo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902299801611:android:c0c11fd9e4a0b84405cf0e",
+        "android_client_info": {
+          "package_name": "com.nucleus.walturntodo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902299801611-t6qpkhuo82qinir3crqlh3l02aqi7q6h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnC_T2AdyIW0JNYpZ7dPtMJJYBmDGhw40"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "902299801611-t6qpkhuo82qinir3crqlh3l02aqi7q6h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
