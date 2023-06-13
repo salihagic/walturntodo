@@ -4,6 +4,7 @@ import 'package:walturntodo/_all.dart';
 abstract class TodosRemoteDataSource {
   Future<Result<GridResult<Todo>>> get();
   Future<Result> add(TodoAddModel model);
+  Future<Result> update(Todo model);
   Future<Result> delete(String id);
 }
 
@@ -33,6 +34,15 @@ class TodosRemoteDataSourceImpl with SafeExecution implements TodosRemoteDataSou
   Future<Result> add(TodoAddModel model) async {
     return await execute(() async {
       await _todosCollection.add(model.toMap());
+
+      return Result.success();
+    });
+  }
+
+  @override
+  Future<Result> update(Todo model) async {
+    return await execute(() async {
+      await _todosCollection.doc(model.id).update(model.toMap());
 
       return Result.success();
     });

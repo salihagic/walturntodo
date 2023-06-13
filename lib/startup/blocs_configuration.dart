@@ -44,6 +44,11 @@ class BlocsConfiguration {
       ),
     );
     services.registerFactory(
+      () => TodoUpdateBloc(
+        todosRepository: services.get<TodosRepository>(),
+      ),
+    );
+    services.registerFactory(
       () => TodoDeleteBloc(
         todosRepository: services.get<TodosRepository>(),
       ),

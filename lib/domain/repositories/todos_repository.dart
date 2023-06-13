@@ -4,6 +4,7 @@ import 'package:walturntodo/_all.dart';
 abstract class TodosRepository {
   Future<Result<GridResult<Todo>>> get();
   Future<Result> add(TodoAddModel model);
+  Future<Result> update(Todo model);
   Future<Result> delete(String id);
 }
 
@@ -19,6 +20,9 @@ class TodosRepositoryImpl implements TodosRepository {
 
   @override
   Future<Result> add(TodoAddModel model) => remoteDataSource.add(model);
+
+  @override
+  Future<Result> update(Todo model) => remoteDataSource.update(model);
 
   @override
   Future<Result> delete(String id) => remoteDataSource.delete(id);

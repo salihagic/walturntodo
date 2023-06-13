@@ -184,6 +184,13 @@ class AppTheme {
           borderRadius: BorderRadius.all(Radius.circular(4.0)),
         ),
       ),
+      checkboxTheme: CheckboxThemeData(
+        checkColor: MaterialStateProperty.all(Colors.white),
+        side: const BorderSide(color: Colors.white, width: 2),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
+      ),
     );
   }
 
@@ -299,56 +306,43 @@ class AppTheme {
   static TextTheme _smallTextTheme(Color color) {
     return TextTheme(
       displayLarge: _textTheme(color).displayLarge?.copyWith(
-            fontSize: _textTheme(color).displayLarge!.fontSize! *
-                _smallTextScaleFactor,
+            fontSize: _textTheme(color).displayLarge!.fontSize! * _smallTextScaleFactor,
           ),
       displayMedium: _textTheme(color).displayMedium?.copyWith(
-            fontSize: _textTheme(color).displayMedium!.fontSize! *
-                _smallTextScaleFactor,
+            fontSize: _textTheme(color).displayMedium!.fontSize! * _smallTextScaleFactor,
           ),
       displaySmall: _textTheme(color).displaySmall?.copyWith(
-            fontSize: _textTheme(color).displaySmall!.fontSize! *
-                _smallTextScaleFactor,
+            fontSize: _textTheme(color).displaySmall!.fontSize! * _smallTextScaleFactor,
           ),
       headlineMedium: _textTheme(color).headlineMedium?.copyWith(
-            fontSize: _textTheme(color).headlineMedium!.fontSize! *
-                _smallTextScaleFactor,
+            fontSize: _textTheme(color).headlineMedium!.fontSize! * _smallTextScaleFactor,
           ),
       headlineSmall: _textTheme(color).headlineSmall?.copyWith(
-            fontSize: _textTheme(color).headlineSmall!.fontSize! *
-                _smallTextScaleFactor,
+            fontSize: _textTheme(color).headlineSmall!.fontSize! * _smallTextScaleFactor,
           ),
       titleLarge: _textTheme(color).titleLarge?.copyWith(
-            fontSize:
-                _textTheme(color).titleLarge!.fontSize! * _smallTextScaleFactor,
+            fontSize: _textTheme(color).titleLarge!.fontSize! * _smallTextScaleFactor,
           ),
       titleMedium: _textTheme(color).titleMedium?.copyWith(
-            fontSize: _textTheme(color).titleMedium!.fontSize! *
-                _smallTextScaleFactor,
+            fontSize: _textTheme(color).titleMedium!.fontSize! * _smallTextScaleFactor,
           ),
       titleSmall: _textTheme(color).titleSmall?.copyWith(
-            fontSize:
-                _textTheme(color).titleSmall!.fontSize! * _smallTextScaleFactor,
+            fontSize: _textTheme(color).titleSmall!.fontSize! * _smallTextScaleFactor,
           ),
       bodyLarge: _textTheme(color).bodyLarge?.copyWith(
-            fontSize:
-                _textTheme(color).bodyLarge!.fontSize! * _smallTextScaleFactor,
+            fontSize: _textTheme(color).bodyLarge!.fontSize! * _smallTextScaleFactor,
           ),
       bodyMedium: _textTheme(color).bodyMedium?.copyWith(
-            fontSize:
-                _textTheme(color).bodyMedium!.fontSize! * _smallTextScaleFactor,
+            fontSize: _textTheme(color).bodyMedium!.fontSize! * _smallTextScaleFactor,
           ),
       bodySmall: _textTheme(color).bodySmall?.copyWith(
-            fontSize:
-                _textTheme(color).bodySmall!.fontSize! * _smallTextScaleFactor,
+            fontSize: _textTheme(color).bodySmall!.fontSize! * _smallTextScaleFactor,
           ),
       labelSmall: _textTheme(color).labelSmall?.copyWith(
-            fontSize:
-                _textTheme(color).labelSmall!.fontSize! * _smallTextScaleFactor,
+            fontSize: _textTheme(color).labelSmall!.fontSize! * _smallTextScaleFactor,
           ),
       labelLarge: _textTheme(color).labelLarge?.copyWith(
-            fontSize:
-                _textTheme(color).labelLarge!.fontSize! * _smallTextScaleFactor,
+            fontSize: _textTheme(color).labelLarge!.fontSize! * _smallTextScaleFactor,
           ),
     );
   }
@@ -356,57 +350,44 @@ class AppTheme {
   static TextTheme _mediumTextTheme(Color color) {
     return TextTheme(
       displayLarge: _textTheme(color).displayLarge?.copyWith(
-            fontSize: _textTheme(color).displayLarge!.fontSize! *
-                _mediumTextScaleFactor,
+            fontSize: _textTheme(color).displayLarge!.fontSize! * _mediumTextScaleFactor,
           ),
       displayMedium: _textTheme(color).displayMedium?.copyWith(
-            fontSize: _textTheme(color).displayMedium!.fontSize! *
-                _mediumTextScaleFactor,
+            fontSize: _textTheme(color).displayMedium!.fontSize! * _mediumTextScaleFactor,
           ),
       displaySmall: _textTheme(color).displaySmall?.copyWith(
-            fontSize: _textTheme(color).displaySmall!.fontSize! *
-                _mediumTextScaleFactor,
+            fontSize: _textTheme(color).displaySmall!.fontSize! * _mediumTextScaleFactor,
           ),
       headlineMedium: _textTheme(color).headlineMedium?.copyWith(
-            fontSize: _textTheme(color).headlineMedium!.fontSize! *
-                _mediumTextScaleFactor,
+            fontSize: _textTheme(color).headlineMedium!.fontSize! * _mediumTextScaleFactor,
           ),
       headlineSmall: _textTheme(color).headlineSmall?.copyWith(
-            fontSize: _textTheme(color).headlineSmall!.fontSize! *
-                _mediumTextScaleFactor,
+            fontSize: _textTheme(color).headlineSmall!.fontSize! * _mediumTextScaleFactor,
           ),
       titleLarge: _textTheme(color).titleLarge?.copyWith(
-            fontSize: _textTheme(color).titleLarge!.fontSize! *
-                _mediumTextScaleFactor,
+            fontSize: _textTheme(color).titleLarge!.fontSize! * _mediumTextScaleFactor,
           ),
       titleMedium: _textTheme(color).titleMedium?.copyWith(
-            fontSize: _textTheme(color).titleMedium!.fontSize! *
-                _mediumTextScaleFactor,
+            fontSize: _textTheme(color).titleMedium!.fontSize! * _mediumTextScaleFactor,
           ),
       titleSmall: _textTheme(color).titleSmall?.copyWith(
-            fontSize: _textTheme(color).titleSmall!.fontSize! *
-                _mediumTextScaleFactor,
+            fontSize: _textTheme(color).titleSmall!.fontSize! * _mediumTextScaleFactor,
           ),
       bodyLarge: _textTheme(color).bodyLarge?.copyWith(
-            fontSize:
-                _textTheme(color).bodyLarge!.fontSize! * _mediumTextScaleFactor,
+            fontSize: _textTheme(color).bodyLarge!.fontSize! * _mediumTextScaleFactor,
           ),
       bodyMedium: _textTheme(color).bodyMedium?.copyWith(
             color: Colors.blue,
-            fontSize: _textTheme(color).bodyMedium!.fontSize! *
-                _mediumTextScaleFactor,
+            fontSize: _textTheme(color).bodyMedium!.fontSize! * _mediumTextScaleFactor,
           ),
       bodySmall: _textTheme(color).bodySmall?.copyWith(
-            fontSize:
-                _textTheme(color).bodySmall!.fontSize! * _mediumTextScaleFactor,
+            fontSize: _textTheme(color).bodySmall!.fontSize! * _mediumTextScaleFactor,
           ),
       labelSmall: _textTheme(color).labelSmall?.copyWith(
-            fontSize: _textTheme(color).labelSmall!.fontSize! *
-                _mediumTextScaleFactor,
+            fontSize: _textTheme(color).labelSmall!.fontSize! * _mediumTextScaleFactor,
           ),
       labelLarge: _textTheme(color).labelLarge?.copyWith(
-            fontSize: _textTheme(color).labelLarge!.fontSize! *
-                _mediumTextScaleFactor,
+            fontSize: _textTheme(color).labelLarge!.fontSize! * _mediumTextScaleFactor,
           ),
     );
   }
