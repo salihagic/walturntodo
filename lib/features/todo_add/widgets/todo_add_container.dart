@@ -12,13 +12,13 @@ class TodoAddContainer extends StatefulWidget {
 
 class _TodoAddContainerState extends State<TodoAddContainer> {
   final _formKey = GlobalKey<FormState>();
-  final _titleController = TextEditingController();
+  final _titleTextEditingController = TextEditingController();
 
   @override
   void dispose() {
     super.dispose();
 
-    _titleController.dispose();
+    _titleTextEditingController.dispose();
   }
 
   @override
@@ -26,13 +26,10 @@ class _TodoAddContainerState extends State<TodoAddContainer> {
     return BlocProvider(
       create: (context) => services.get<TodoAddBloc>(),
       child: AbstractFormBuilder<TodoAddBloc, TodoAddState>(
-        onValidationError: (context, state) {
-          context.toast.validation(message: 'Please fill in the title');
-        },
         onSuccess: (context, state) {
+          context.unfocus();
+          _titleTextEditingController.clear();
           context.read<TodosBloc>().add(TodosLoadEvent());
-          _titleController.clear();
-          FocusScope.of(context).unfocus();
         },
         builder: (context, todoAddState) {
           return Form(
@@ -48,14 +45,18 @@ class _TodoAddContainerState extends State<TodoAddContainer> {
                 children: [
                   Expanded(
                     child: TextFormField(
-                      controller: _titleController,
+                      controller: _titleTextEditingController,
                       validator: (text) => todoAddState.modelValidator?.title(todoAddState.model?.copyWith(title: text)),
                       onChanged: (text) => context.read<TodoAddBloc>().add(AbstractFormUpdateEvent(model: todoAddState.model?.copyWith(title: text))),
                     ),
                   ),
                   const Gap(20),
                   FloatingActionButton(
-                    onPressed: () => context.read<TodoAddBloc>().add(AbstractFormSubmitEvent()),
+                    onPressed: () {
+                      if (_formKey.validate()) {
+                        context.read<TodoAddBloc>().add(AbstractFormSubmitEvent());
+                      }
+                    },
                     child: const Icon(Icons.add, size: 35),
                   ),
                 ],

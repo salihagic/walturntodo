@@ -7,7 +7,6 @@ class TodosBloc extends AbstractListBloc<TodosState> {
   TodosBloc({
     required this.todosRepository,
   }) : super(TodosState.initial());
-
   @override
   AbstractListState initialState() => TodosState.initial();
 

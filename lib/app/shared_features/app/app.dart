@@ -26,18 +26,9 @@ class _AppLayoutBuilder extends StatelessWidget {
     return BlocBuilder<ThemeBloc, ThemeState>(
       builder: (context, themeState) {
         return ResponsiveLayoutBuilder(
-          small: (_, __) => _App(
-              theme: AppTheme.small,
-              darkTheme: AppTheme.smallDark,
-              themeMode: themeState.themeMode),
-          medium: (_, __) => _App(
-              theme: AppTheme.medium,
-              darkTheme: AppTheme.mediumDark,
-              themeMode: themeState.themeMode),
-          large: (_, __) => _App(
-              theme: AppTheme.large,
-              darkTheme: AppTheme.largeDark,
-              themeMode: themeState.themeMode),
+          small: (_, __) => _App(theme: AppTheme.small, darkTheme: AppTheme.smallDark, themeMode: themeState.themeMode),
+          medium: (_, __) => _App(theme: AppTheme.medium, darkTheme: AppTheme.mediumDark, themeMode: themeState.themeMode),
+          large: (_, __) => _App(theme: AppTheme.large, darkTheme: AppTheme.largeDark, themeMode: themeState.themeMode),
         );
       },
     );
@@ -84,8 +75,7 @@ class _App extends StatelessWidget {
                 child: BlocListener<ErrorHandlerBloc, ErrorHandlerState>(
                   listener: (context, errorHandlerState) {
                     if (errorHandlerState.showMessage) {
-                      context.toast.showExceptionMessage(
-                          context.translations, errorHandlerState.exception!);
+                      context.toast.showExceptionMessage(context.translations, errorHandlerState.exception!);
                     }
                   },
                   child: DismissFocusOverlay(

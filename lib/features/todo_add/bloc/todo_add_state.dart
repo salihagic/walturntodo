@@ -6,7 +6,7 @@ class TodoAddState extends AbstractFormState<TodoAddModel, TodoAddModelValidator
     super.model,
     super.modelValidator,
     required super.formResultStatus,
-    super.autovalidate = false,
+    super.autovalidate,
   });
 
   factory TodoAddState.initial() => TodoAddState(
@@ -18,10 +18,12 @@ class TodoAddState extends AbstractFormState<TodoAddModel, TodoAddModelValidator
     TodoAddModel? model,
     TodoAddModelValidator? modelValidator,
     FormResultStatus? formResultStatus,
+    bool? autovalidate,
   }) =>
       TodoAddState(
         model: model ?? this.model,
         modelValidator: modelValidator ?? this.modelValidator,
         formResultStatus: formResultStatus ?? this.formResultStatus,
+        autovalidate: autovalidate ?? this.autovalidate,
       );
 }

@@ -15,22 +15,18 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
 
   static ThemeState initialState() => ThemeState(
         status: ThemeStateStatus.initializing,
-        themeMode: ThemeMode.light,
+        themeMode: ThemeMode.dark,
       );
 
   Future<void> _init(ThemeInitEvent event, Emitter<ThemeState> emit) async {
     int? themeModeIndex = await storageRepository.get(AppKeys.theme_mode);
 
-    add(ThemeChangeEvent(
-        themeMode: themeModeIndex == null
-            ? ThemeMode.light
-            : ThemeMode.values[themeModeIndex]));
+    add(ThemeChangeEvent(themeMode: themeModeIndex == null ? ThemeMode.dark : ThemeMode.values[themeModeIndex]));
   }
 
   Future<void> _change(ThemeChangeEvent event, Emitter<ThemeState> emit) async {
     await storageRepository.set(AppKeys.theme_mode, event.themeMode.index);
 
-    emit(state.copyWith(
-        status: ThemeStateStatus.initialized, themeMode: event.themeMode));
+    emit(state.copyWith(status: ThemeStateStatus.initialized, themeMode: event.themeMode));
   }
 }
