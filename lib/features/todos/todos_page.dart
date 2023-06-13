@@ -35,6 +35,7 @@ class _Todos extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 20.0),
       child: AbstractListBuilder<TodosBloc, TodosState>(
+        isLoading: (context, state) => false,
         onInit: (context) => context.read<TodosBloc>().add(TodosLoadEvent()),
         onRefresh: (context) => context.read<TodosBloc>().add(TodosRefreshEvent()),
         enableLoadMore: false,
