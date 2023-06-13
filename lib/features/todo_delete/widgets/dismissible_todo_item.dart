@@ -15,7 +15,7 @@ class DismissibleTodoItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      key: Key(todo.id),
+      key: Key('dismissible_todo_item_bloc_provider${todo.toMap()}'),
       create: (context) => services.get<TodoDeleteBloc>(),
       child: AbstractFormBuilder<TodoDeleteBloc, TodoDeleteState>(
         onInit: (context) => context.read<TodoDeleteBloc>().add(AbstractFormInitEvent(model: todo)),
@@ -28,7 +28,7 @@ class DismissibleTodoItem extends StatelessWidget {
               extentRatio: 0.2,
               children: [
                 SlidableAction(
-                  onPressed: (context) => context.read<TodoDeleteBloc>().add(AbstractFormSubmitEvent(preserve: false)),
+                  onPressed: (context) => context.read<TodoDeleteBloc>().add(AbstractFormSubmitEvent()),
                   autoClose: true,
                   backgroundColor: context.appTheme.errorColor,
                   foregroundColor: Colors.white,

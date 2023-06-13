@@ -43,10 +43,11 @@ class _TodoItemUpdateDialog extends StatelessWidget {
       color: context.theme.scaffoldBackgroundColor,
       padding: const EdgeInsets.all(20.0),
       child: BlocProvider(
-        key: Key(todo.id),
+        key: Key('todo_item_update_dialog_${todo.id}'),
         create: (context) => services.get<TodoUpdateBloc>(),
         child: AbstractFormBuilder<TodoUpdateBloc, TodoUpdateState>(
           onInit: (context) => context.read<TodoUpdateBloc>().add(AbstractFormInitEvent(model: todo)),
+          reinitOnSuccess: false,
           onSuccess: (context, state) {
             context.read<TodosBloc>().add(TodosLoadEvent());
             context.navigator.pop();

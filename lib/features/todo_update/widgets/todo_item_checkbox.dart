@@ -17,7 +17,7 @@ class _TodoItemCheckboxState extends State<TodoItemCheckbox> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      key: Key(widget.todo.id),
+      key: Key('todo_item_checkbox_${widget.todo.id}'),
       create: (context) => services.get<TodoUpdateBloc>(),
       child: AbstractFormBuilder<TodoUpdateBloc, TodoUpdateState>(
         onInit: (context) => context.read<TodoUpdateBloc>().add(AbstractFormInitEvent(model: widget.todo)),
