@@ -30,7 +30,7 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   Future<void> _change(ThemeChangeEvent event, Emitter<ThemeState> emit) async {
     await storageRepository.set(AppKeys.theme_mode, event.themeMode.index);
 
-    emit(ThemeState(
+    emit(state.copyWith(
         status: ThemeStateStatus.initialized, themeMode: event.themeMode));
   }
 }

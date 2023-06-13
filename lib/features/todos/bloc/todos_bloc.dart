@@ -12,5 +12,5 @@ class TodosBloc extends AbstractListBloc<TodosState> {
   AbstractListState initialState() => TodosState.initial();
 
   @override
-  Future<Result> resolveData() => todosRepository.get();
+  Future<Result> resolveData() async => await todosRepository.get();
 }

@@ -5,6 +5,7 @@ export 'button.dart';
 export 'cached_image.dart';
 export 'clickable.dart';
 export 'connectivity_container.dart';
+export 'dismiss_focus_overlay.dart';
 export 'loader.dart';
 export 'orientation_layout_builder.dart';
 export 'responsive_layout_builder.dart';

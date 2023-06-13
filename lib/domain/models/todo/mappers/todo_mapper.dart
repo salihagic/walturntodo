@@ -5,5 +5,4 @@ EntityMapper<QueryDocumentSnapshot<Map<String, dynamic>>, Todo>
           id: response.id,
           isCompleted: response.get('isCompleted') as bool,
           title: response.get('title') as String,
-          description: response.get('description') as String,
         );

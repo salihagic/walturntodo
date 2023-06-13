@@ -2,7 +2,7 @@ import 'package:walturntodo/_all.dart';
 
 const _smallTextScaleFactor = 0.90;
 const _mediumTextScaleFactor = 0.95;
-const primaryHex = 0xFFCDAB6A;
+const primaryHex = 0xFF038ac7;
 const primaryColor = Color(primaryHex);
 const successColor = Colors.green;
 const errorColor = Colors.red;
@@ -133,7 +133,7 @@ class AppTheme {
           fontFamily: defaultFont,
         ),
         filled: false,
-        fillColor: Colors.white,
+        fillColor: Colors.transparent,
         floatingLabelBehavior: FloatingLabelBehavior.auto,
         errorBorder: const UnderlineInputBorder(
           borderSide: BorderSide(

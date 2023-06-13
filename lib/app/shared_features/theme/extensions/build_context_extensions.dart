@@ -2,7 +2,7 @@ import 'package:walturntodo/_all.dart';
 
 extension AppThemeBuildContextExtensions on BuildContext {
   ThemeData get theme => Theme.of(this);
-  AppTheme get appTheme => Theme.of(this).extension<AppTheme>()!;
+  AppThemeData get appTheme => Theme.of(this).extension<AppThemeData>()!;
 
   MediaQueryData get mediaQuery => MediaQuery.of(this);
 

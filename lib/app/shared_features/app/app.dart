@@ -77,6 +77,7 @@ class _App extends StatelessWidget {
             navigatorKey: globalNavigatorKey,
             debugShowCheckedModeBanner: false,
             builder: (context, child) {
+              translations = AppLocalizations.of(context)!;
               _setStatusBarAndSystemNavigationColors();
 
               return AbstractConfigurationWidget(
@@ -87,7 +88,9 @@ class _App extends StatelessWidget {
                           context.translations, errorHandlerState.exception!);
                     }
                   },
-                  child: ConnectivityContainer(child: child!),
+                  child: DismissFocusOverlay(
+                    child: ConnectivityContainer(child: child!),
+                  ),
                 ),
               );
             },

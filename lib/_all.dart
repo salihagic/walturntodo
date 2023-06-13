@@ -14,6 +14,7 @@ export 'package:gap/gap.dart';
 export 'package:get_it/get_it.dart';
 export 'package:firebase_core/firebase_core.dart';
 export 'package:cloud_firestore/cloud_firestore.dart';
+export 'package:flutter_svg/flutter_svg.dart';
 
 //App
 export 'app/_all.dart';

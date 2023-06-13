@@ -37,5 +37,11 @@ class BlocsConfiguration {
         todosRepository: services.get<TodosRepository>(),
       ),
     );
+    services.registerFactory(
+      () => TodoAddBloc(
+        todosRepository: services.get<TodosRepository>(),
+        modelValidator: services.get<TodoAddModelValidator>(),
+      ),
+    );
   }
 }
