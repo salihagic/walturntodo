@@ -15,14 +15,7 @@ class AppBarAppLogo extends StatelessWidget {
           color: context.theme.primaryColor,
         ),
         const Gap(20),
-        Text(
-          'ToDo',
-          style: context.theme.textTheme.headlineLarge?.copyWith(
-            color: context.theme.primaryColor,
-            fontWeight: FontWeight.w500,
-            fontSize: 30,
-          ),
-        ),
+        const AppBarAppTitle(),
       ],
     );
   }

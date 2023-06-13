@@ -6,10 +6,11 @@ class TodoUpdateBloc extends AbstractFormBloc<TodoUpdateState> {
 
   TodoUpdateBloc({
     required this.todosRepository,
-  }) : super(TodoUpdateState.initial());
+    required TodoUpdateModelValidator modelValidator,
+  }) : super(TodoUpdateState.initial(), modelValidator);
 
   @override
-  Future<Result> initModel(AbstractFormInitEvent event, Emitter<TodoUpdateState> emit) async => Result.success(data: event.model);
+  Future<Result> initModel(AbstractFormInitEvent event, Emitter<TodoUpdateState> emit) => todosRepository.prepareForUpdate(event.model.id);
 
   @override
   Future<Result> onSubmit(model) => todosRepository.update(model);

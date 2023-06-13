@@ -5,6 +5,7 @@ class DataSourcesConfiguration {
     services.registerSingleton<TodosRemoteDataSource>(
       TodosRemoteDataSourceImpl(
         todoMapper: todoMapper,
+        todoUpdateModelMapper: todoUpdateModelMapper,
       ),
     );
   }

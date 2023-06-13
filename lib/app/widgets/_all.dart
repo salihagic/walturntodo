@@ -1,5 +1,6 @@
 export 'animated_fade_in.dart';
 export 'app_bar_app_logo.dart';
+export 'app_bar_app_title.dart';
 export 'back_arrow.dart';
 export 'button.dart';
 export 'cached_image.dart';

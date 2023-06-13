@@ -13,14 +13,14 @@ class AppBlocs extends StatelessWidget {
       providers: [
         _<AppBloc>(),
         _<ConnectivityBloc>(),
-        _<ThemeBloc>(),
         _<LocalizationBloc>(),
         _<ErrorHandlerBloc>(),
+        _<ThemeBloc>(),
+        _<TodosBloc>(),
       ],
       child: child,
     );
   }
 
-  BlocProvider<T> _<T extends StateStreamableSource<Object?>>() =>
-      BlocProvider<T>.value(value: services.get<T>());
+  BlocProvider<T> _<T extends StateStreamableSource<Object?>>() => BlocProvider<T>.value(value: services.get<T>());
 }

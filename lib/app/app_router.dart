@@ -2,8 +2,7 @@ import 'package:walturntodo/_all.dart';
 
 class AppRouter {
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
-    return MaterialPageRoute(
-        settings: settings, builder: (_) => _onGenerateRoute(settings));
+    return MaterialPageRoute(settings: settings, builder: (_) => _onGenerateRoute(settings));
   }
 
   static Widget _onGenerateRoute(RouteSettings settings) {

@@ -29,14 +29,14 @@ class BlocsConfiguration {
         storageRepository: services.get<IStorageRepository>(),
       ),
     );
-  }
-
-  static void configureScoped() {
-    services.registerFactory(
-      () => TodosBloc(
+    services.registerSingleton(
+      TodosBloc(
         todosRepository: services.get<TodosRepository>(),
       ),
     );
+  }
+
+  static void configureScoped() {
     services.registerFactory(
       () => TodoAddBloc(
         todosRepository: services.get<TodosRepository>(),
@@ -46,6 +46,7 @@ class BlocsConfiguration {
     services.registerFactory(
       () => TodoUpdateBloc(
         todosRepository: services.get<TodosRepository>(),
+        modelValidator: services.get<TodoUpdateModelValidator>(),
       ),
     );
     services.registerFactory(

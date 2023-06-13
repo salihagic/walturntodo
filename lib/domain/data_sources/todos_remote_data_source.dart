@@ -4,15 +4,18 @@ import 'package:walturntodo/_all.dart';
 abstract class TodosRemoteDataSource {
   Future<Result<GridResult<Todo>>> get();
   Future<Result> add(TodoAddModel model);
-  Future<Result> update(Todo model);
+  Future<Result<TodoUpdateModel>> prepareForUpdate(String id);
+  Future<Result> update(TodoUpdateModel model);
   Future<Result> delete(String id);
 }
 
 class TodosRemoteDataSourceImpl with SafeExecution implements TodosRemoteDataSource {
   final EntityMapper<QueryDocumentSnapshot<Map<String, dynamic>>, Todo> todoMapper;
+  final EntityMapper<DocumentSnapshot<Map<String, dynamic>>, TodoUpdateModel> todoUpdateModelMapper;
 
   TodosRemoteDataSourceImpl({
     required this.todoMapper,
+    required this.todoUpdateModelMapper,
   });
 
   @override
@@ -40,7 +43,21 @@ class TodosRemoteDataSourceImpl with SafeExecution implements TodosRemoteDataSou
   }
 
   @override
-  Future<Result> update(Todo model) async {
+  Future<Result<TodoUpdateModel>> prepareForUpdate(String id) async {
+    // In this case it is redundant to fetch data again from the API, but as
+    // this app is a concept app, update operation should always have the
+    // freshest possible data to populate form fields, and to mittigate the
+    // issue of not containing enough data as the display viewmodel sometimes
+    // doesn't contain all the information that can be updated
+    return await execute(() async {
+      final doc = await _todosCollection.doc(id).get();
+
+      return Result.success(data: todoUpdateModelMapper(doc));
+    });
+  }
+
+  @override
+  Future<Result> update(TodoUpdateModel model) async {
     return await execute(() async {
       await _todosCollection.doc(model.id).update(model.toMap());
 
