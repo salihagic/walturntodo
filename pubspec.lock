@@ -21,10 +21,10 @@ packages:
     dependency: "direct main"
     description:
       name: abstract_bloc
-      sha256: ecbe7b4bd62d38fa9b0e7387293d6594dcf42b56140878ab022ef48200833db2
+      sha256: "34d72769b26f7222e877316ea883af9fde1049db375492cf2e296cefc6dff1bd"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.4"
+    version: "1.0.5"
   analyzer:
     dependency: transitive
     description:
@@ -419,6 +419,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
+  flutter_slidable:
+    dependency: "direct main"
+    description:
+      name: flutter_slidable
+      sha256: cc4231579e3eae41ae166660df717f4bad1359c87f4a4322ad8ba1befeb3d2be
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   flutter_svg:
     dependency: "direct main"
     description:

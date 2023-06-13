@@ -43,5 +43,10 @@ class BlocsConfiguration {
         modelValidator: services.get<TodoAddModelValidator>(),
       ),
     );
+    services.registerFactory(
+      () => TodoDeleteBloc(
+        todosRepository: services.get<TodosRepository>(),
+      ),
+    );
   }
 }

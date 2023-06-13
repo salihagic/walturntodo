@@ -10,9 +10,13 @@ class TodoItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(todo.title),
-      tileColor: context.appTheme.neutral1,
+    return DismissibleTodoItem(
+      todo: todo,
+      child: ListTile(
+        key: ValueKey('todo_item_key_${todo.id}'),
+        title: Text(todo.title),
+        tileColor: context.appTheme.neutral1,
+      ),
     );
   }
 }

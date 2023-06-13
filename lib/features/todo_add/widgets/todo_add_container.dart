@@ -27,7 +27,6 @@ class _TodoAddContainerState extends State<TodoAddContainer> {
       create: (context) => services.get<TodoAddBloc>(),
       child: AbstractFormBuilder<TodoAddBloc, TodoAddState>(
         onSuccess: (context, state) {
-          context.unfocus();
           _titleTextEditingController.clear();
           context.read<TodosBloc>().add(TodosLoadEvent());
         },
