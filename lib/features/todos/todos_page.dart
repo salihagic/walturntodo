@@ -74,18 +74,24 @@ class _Todos extends StatelessWidget {
       child: AbstractListBuilder<TodosBloc, TodosState>(
         isLoading: (context, state) => false,
         onInit: (context) => context.read<TodosBloc>().add(TodosLoadEvent()),
-        onRefresh: (context) => context.read<TodosBloc>().add(TodosRefreshEvent()),
+        onRefresh: (context) =>
+            context.read<TodosBloc>().add(TodosRefreshEvent()),
         enableLoadMore: false,
-        itemCount: (context, todosState) => todosState.items.where((x) => x.isCompleted == isCompleted).length,
+        itemCount: (context, todosState) =>
+            todosState.items.where((x) => x.isCompleted == isCompleted).length,
         itemBuilder: (context, todosState, index) {
-          final items = todosState.items.where((x) => x.isCompleted == isCompleted).toList();
+          final items = todosState.items
+              .where((x) => x.isCompleted == isCompleted)
+              .toList();
 
           return TodoItem(todo: items[index]);
         },
         separatorBuilder: (context, state, index) => const SizedBox(height: 5),
         noDataBuilder: (_, __, ___) => Center(
           child: Text(
-            isCompleted ? context.translations.there_are_no_completed_todos : context.translations.there_are_no_pending_todos,
+            isCompleted
+                ? context.translations.there_are_no_completed_todos
+                : context.translations.there_are_no_pending_todos,
           ),
         ),
       ),

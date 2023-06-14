@@ -21,10 +21,10 @@ packages:
     dependency: "direct main"
     description:
       name: abstract_bloc
-      sha256: "0644f454b6db09c969aec92c1aa2bc1e73f0d2604a048f223f81fd6d9ffbe9c1"
+      sha256: "6a4d142defd4b5e21d6cd0e4ee1f33b49a2c75b75d428823337e1050a06ebcfb"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.7"
+    version: "1.0.8"
   analyzer:
     dependency: transitive
     description:

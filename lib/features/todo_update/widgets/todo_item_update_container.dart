@@ -13,7 +13,7 @@ class TodoItemUpdateContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         showDialog(
           context: context,
@@ -46,7 +46,9 @@ class _TodoItemUpdateDialog extends StatelessWidget {
         key: Key('todo_item_update_dialog_${todo.id}'),
         create: (context) => services.get<TodoUpdateBloc>(),
         child: AbstractFormBuilder<TodoUpdateBloc, TodoUpdateState>(
-          onInit: (context) => context.read<TodoUpdateBloc>().add(AbstractFormInitEvent(model: todo)),
+          onInit: (context) => context
+              .read<TodoUpdateBloc>()
+              .add(AbstractFormInitEvent(model: todo)),
           reinitOnSuccess: false,
           onSuccess: (context, state) {
             context.read<TodosBloc>().add(TodosLoadEvent());
@@ -62,8 +64,12 @@ class _TodoItemUpdateDialog extends StatelessWidget {
                   const Gap(20.0),
                   TextFormField(
                     initialValue: todoUpdateState.model?.title,
-                    validator: (text) => todoUpdateState.modelValidator?.title(todoUpdateState.model?.copyWith(title: text)),
-                    onChanged: (text) => context.read<TodoUpdateBloc>().add(AbstractFormUpdateEvent(model: todoUpdateState.model?.copyWith(title: text))),
+                    validator: (text) => todoUpdateState.modelValidator
+                        ?.title(todoUpdateState.model?.copyWith(title: text)),
+                    onChanged: (text) => context.read<TodoUpdateBloc>().add(
+                        AbstractFormUpdateEvent(
+                            model:
+                                todoUpdateState.model?.copyWith(title: text))),
                   ),
                   const Gap(20.0),
                   Row(
@@ -78,7 +84,9 @@ class _TodoItemUpdateDialog extends StatelessWidget {
                         child: Button(
                           onTap: () {
                             if (_formKey.validate()) {
-                              context.read<TodoUpdateBloc>().add(AbstractFormSubmitEvent());
+                              context
+                                  .read<TodoUpdateBloc>()
+                                  .add(AbstractFormSubmitEvent());
                             }
                           },
                           text: context.translations.save,
