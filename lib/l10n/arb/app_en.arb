@@ -1,6 +1,7 @@
 {
     "@@locale": "en",
     "save": "Save",
+    "no_internet_connection": "No internet connection",
     "pending": "Pending",
     "completed": "Completed",
     "add_a_task": "Add a task",
