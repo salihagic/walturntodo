@@ -25,7 +25,8 @@ Even though this application is a showcase app that covers simple form actions, 
 
 Take a look at the functionalities of the app:
 
-![Add](https://github.com/salihagic/walturntodo/assets/24563963/a865449c-d9c8-4b49-941e-daf8bf531a09)
-![Update](https://github.com/salihagic/walturntodo/assets/24563963/7ec368fa-0745-43cc-9800-e61bfa3d739f)
-![Complete](https://github.com/salihagic/walturntodo/assets/24563963/378a31a9-f32b-4cdb-ba16-1b55bd89dff1)
-![Delete](https://github.com/salihagic/walturntodo/assets/24563963/69804b53-9e7c-46bc-a0b0-72917d7195c4)
+![Add](https://github.com/salihagic/walturntodo/assets/24563963/94759401-5f76-4575-91ff-3414b7cfa0a5)
+![Update](https://github.com/salihagic/walturntodo/assets/24563963/55a40e81-bfe9-4186-b2e7-029e8a55dabc)
+![Complete](https://github.com/salihagic/walturntodo/assets/24563963/2072a211-cf0a-4451-9ef5-bd17582b5e2d)
+![Delete](https://github.com/salihagic/walturntodo/assets/24563963/967831af-0ec2-4893-8758-377bc5a06a03)
+![View](https://github.com/salihagic/walturntodo/assets/24563963/d1437b7f-b96f-4b21-91fd-ce06b93a9094)
