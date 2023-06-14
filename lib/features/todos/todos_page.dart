@@ -18,10 +18,12 @@ class _TodosPageState extends State<TodosPage> {
         appBar: AppBar(
           title: const AppBarAppLogo(),
         ),
-        body: Column(
+        body: const Column(
           children: [
-            Expanded(child: _Todos()),
-            const TodoAddContainer(),
+            Expanded(
+              child: _TodosWrapper(),
+            ),
+            TodoAddContainer(),
           ],
         ),
       ),
@@ -29,7 +31,42 @@ class _TodosPageState extends State<TodosPage> {
   }
 }
 
+class _TodosWrapper extends StatelessWidget {
+  const _TodosWrapper();
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 2,
+      child: Column(
+        children: [
+          TabBar(
+            tabs: [
+              Tab(text: context.translations.pending),
+              Tab(text: context.translations.completed),
+            ],
+          ),
+          const Expanded(
+            child: TabBarView(
+              children: [
+                _Todos(isCompleted: false),
+                _Todos(isCompleted: true),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class _Todos extends StatelessWidget {
+  final bool isCompleted;
+
+  const _Todos({
+    required this.isCompleted,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -39,10 +76,17 @@ class _Todos extends StatelessWidget {
         onInit: (context) => context.read<TodosBloc>().add(TodosLoadEvent()),
         onRefresh: (context) => context.read<TodosBloc>().add(TodosRefreshEvent()),
         enableLoadMore: false,
-        itemBuilder: (context, todosState, index) => TodoItem(todo: todosState.items[index]),
+        itemCount: (context, todosState) => todosState.items.where((x) => x.isCompleted == isCompleted).length,
+        itemBuilder: (context, todosState, index) {
+          final items = todosState.items.where((x) => x.isCompleted == isCompleted).toList();
+
+          return TodoItem(todo: items[index]);
+        },
         separatorBuilder: (context, state, index) => const SizedBox(height: 5),
         noDataBuilder: (_, __, ___) => Center(
-          child: Text(context.translations.there_are_no_todos),
+          child: Text(
+            isCompleted ? context.translations.there_are_no_completed_todos : context.translations.there_are_no_pending_todos,
+          ),
         ),
       ),
     );

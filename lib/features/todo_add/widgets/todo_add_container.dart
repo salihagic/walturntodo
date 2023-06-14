@@ -48,16 +48,24 @@ class _TodoAddContainerState extends State<TodoAddContainer> {
                       controller: _titleTextEditingController,
                       validator: (text) => todoAddState.modelValidator?.title(todoAddState.model?.copyWith(title: text)),
                       onChanged: (text) => context.read<TodoAddBloc>().add(AbstractFormUpdateEvent(model: todoAddState.model?.copyWith(title: text))),
+                      decoration: InputDecoration(
+                        hintText: context.translations.add_a_task,
+                      ),
                     ),
                   ),
                   const Gap(20),
                   FloatingActionButton(
                     onPressed: () {
-                      if (_formKey.validate()) {
-                        context.read<TodoAddBloc>().add(AbstractFormSubmitEvent());
-                      }
+                      _formKey.validate();
+                      context.read<TodoAddBloc>().add(AbstractFormSubmitEvent());
                     },
-                    child: const Icon(Icons.add, size: 35),
+                    child: () {
+                      if (todoAddState.isSubmitting) {
+                        return const Loader.sm(color: Colors.white);
+                      }
+
+                      return const Icon(Icons.add, size: 35);
+                    }(),
                   ),
                 ],
               ),

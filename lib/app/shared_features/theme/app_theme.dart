@@ -92,8 +92,7 @@ class AppTheme {
           fontFamily: defaultFont,
         ),
         hintStyle: TextStyle(
-          color: Colors.white,
-          fontSize: 16,
+          color: Colors.grey,
           fontWeight: FontWeight.w400,
           fontStyle: FontStyle.normal,
           fontFamily: defaultFont,

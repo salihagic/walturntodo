@@ -1,5 +1,8 @@
 {
     "@@locale": "en",
+    "pending": "Pending",
+    "completed": "Completed",
+    "add_a_task": "Add a task",
     "title_is_required": "Title is required",
     "reload": "Reload",
     "okay": "Okay",
@@ -8,7 +11,8 @@
     "an_error_occured_please_try_again": "An error occured, please try again",
     "there_was_an_error_please_try_again": "There was an error, please try again",
     "showing_cached_data": "Showing cached data",
-    "there_are_no_todos": "There are no todos",
+    "there_are_no_pending_todos": "There are no pending todos",
+    "there_are_no_completed_todos": "There are no completed todos",
     "there_was_a_network_error_please_try_again_later": "There was a network error, please try again later",
     "there_was_a_server_error_please_try_again_later": "There was a server error, please try again later",
     "there_was_a_validation_error_please_fix_and_try_again": "There was a validation error, please fix and try again",
