@@ -12,32 +12,32 @@ class ConnectivityContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: BlocBuilder<ConnectivityBloc, ConnectivityState>(
-        builder: (context, connectivityState) {
-          return Column(
-            children: [
-              if (connectivityState.connectivityResult ==
-                  ConnectivityResult.none) ...{
-                Material(
-                  color: Colors.transparent,
-                  child: Container(
-                    color: Colors.red,
-                    padding: const EdgeInsets.symmetric(vertical: 5),
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('No internet connection'),
-                      ],
-                    ),
+    return BlocBuilder<ConnectivityBloc, ConnectivityState>(
+      builder: (context, connectivityState) {
+        return Column(
+          children: [
+            if (connectivityState.connectivityResult ==
+                ConnectivityResult.none) ...{
+              Material(
+                color: Colors.transparent,
+                child: Container(
+                  color: Colors.red,
+                  padding: const EdgeInsets.symmetric(vertical: 5),
+                  margin:
+                      EdgeInsets.only(top: context.mediaQuery.viewPadding.top),
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('No internet connection'),
+                    ],
                   ),
                 ),
-              },
-              Expanded(child: child),
-            ],
-          );
-        },
-      ),
+              ),
+            },
+            Expanded(child: child),
+          ],
+        );
+      },
     );
   }
 }
