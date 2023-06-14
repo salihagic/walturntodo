@@ -15,12 +15,7 @@ Even though this application is a showcase app that covers simple form actions, 
 
 Take a look at the functionalities of the app:
 
-<p style="display: flex; justify-content: space-between; width: 100vw;">
-  <img src="https://user-images.githubusercontent.com/24563963/167363480-af2e712d-ec7f-46c1-b6f0-51be23d3e8db.gif" width="250" height="500"/>
-  <img src="https://user-images.githubusercontent.com/24563963/167363508-cf5e2430-de2c-4aef-ab90-0bafef0c21b4.gif" width="250" height="500"/>
-</p>
-
-<p style="display: flex; justify-content: space-between; width: 100vw;">
-  <img src="https://user-images.githubusercontent.com/24563963/167363480-af2e712d-ec7f-46c1-b6f0-51be23d3e8db.gif" width="250" height="500"/>
-  <img src="https://user-images.githubusercontent.com/24563963/167363508-cf5e2430-de2c-4aef-ab90-0bafef0c21b4.gif" width="250" height="500"/>
-</p>
+![Add](https://github.com/salihagic/walturntodo/assets/24563963/a865449c-d9c8-4b49-941e-daf8bf531a09)
+![Update](https://github.com/salihagic/walturntodo/assets/24563963/7ec368fa-0745-43cc-9800-e61bfa3d739f)
+![Complete](https://github.com/salihagic/walturntodo/assets/24563963/378a31a9-f32b-4cdb-ba16-1b55bd89dff1)
+![Delete](https://github.com/salihagic/walturntodo/assets/24563963/69804b53-9e7c-46bc-a0b0-72917d7195c4)
