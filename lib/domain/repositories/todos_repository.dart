@@ -23,10 +23,10 @@ class TodosRepositoryImpl implements TodosRepository {
   Future<Result> add(TodoAddModel model) => remoteDataSource.add(model);
 
   @override
-  Future<Result> update(TodoUpdateModel model) => remoteDataSource.update(model);
+  Future<Result<TodoUpdateModel>> prepareForUpdate(Todo todo) => remoteDataSource.prepareForUpdate(todo);
 
   @override
-  Future<Result<TodoUpdateModel>> prepareForUpdate(Todo todo) => remoteDataSource.prepareForUpdate(todo);
+  Future<Result> update(TodoUpdateModel model) => remoteDataSource.update(model);
 
   @override
   Future<Result> delete(String id) => remoteDataSource.delete(id);

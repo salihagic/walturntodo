@@ -13,6 +13,8 @@ class TodosRemoteDataSourceImpl with SafeExecution implements TodosRemoteDataSou
   final EntityMapper<QueryDocumentSnapshot<Map<String, dynamic>>, Todo> todoMapper;
   final EntityMapper<DocumentSnapshot<Map<String, dynamic>>, TodoUpdateModel> todoUpdateModelMapper;
 
+  CollectionReference<Map<String, dynamic>> get _todosCollection => FirebaseFirestore.instance.collection('todos');
+
   TodosRemoteDataSourceImpl({
     required this.todoMapper,
     required this.todoUpdateModelMapper,
@@ -44,6 +46,7 @@ class TodosRemoteDataSourceImpl with SafeExecution implements TodosRemoteDataSou
 
   @override
   Future<Result<TodoUpdateModel>> prepareForUpdate(Todo todo) async {
+    // Option 1
     // In this case it is redundant to fetch data again from the API, but as
     // this app is a concept app, update operation should always have the
     // freshest possible data to populate form fields, and to mittigate the
@@ -54,6 +57,7 @@ class TodosRemoteDataSourceImpl with SafeExecution implements TodosRemoteDataSou
     //   return Result.success(data: todoUpdateModelMapper(doc));
     // });
 
+    // Option 2
     // This is a case where update model and entity are the same so we don't
     // need to fetch data from API (minor performance improvement)
     return Result.success(
@@ -82,6 +86,4 @@ class TodosRemoteDataSourceImpl with SafeExecution implements TodosRemoteDataSou
       return Result.success();
     });
   }
-
-  CollectionReference<Map<String, dynamic>> get _todosCollection => FirebaseFirestore.instance.collection('todos');
 }
