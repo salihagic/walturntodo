@@ -11,6 +11,15 @@ The application contains simple ToDo app features:
 - Mark todo as completed
 - Delete todo
 
+And few general app features:
+
+- Theme setup
+- Localization (translations on multiple languages)
+- Error handling setup
+- Toast messages
+- No-connection listener and overlay widget
+- Multiple environments
+
 Even though this application is a showcase app that covers simple form actions, validation, list loading etc. with BLoC state management approach it is important to mention that this project uses one more layer of abstraction by using [abstract_bloc](https://pub.dev/packages/abstract_bloc) package which is just a convenience for implementing already mentioned features with BLoC. It offers simple to use base classes for Bloc and few useful widgets for loading lists and handling forms, but in essence it is the same approach as with plain flutter_bloc package.
 
 Take a look at the functionalities of the app:
