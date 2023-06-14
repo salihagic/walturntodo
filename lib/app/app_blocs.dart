@@ -11,7 +11,6 @@ class AppBlocs extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        _<AppBloc>(),
         _<ConnectivityBloc>(),
         _<LocalizationBloc>(),
         _<ErrorHandlerBloc>(),

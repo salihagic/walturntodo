@@ -71,7 +71,7 @@ class _TodoItemUpdateDialog extends StatelessWidget {
                       Expanded(
                         child: Button(
                           onTap: () => context.navigator.pop(),
-                          text: 'Cancel',
+                          text: context.translations.cancel,
                         ),
                       ),
                       Expanded(
@@ -81,7 +81,7 @@ class _TodoItemUpdateDialog extends StatelessWidget {
                               context.read<TodoUpdateBloc>().add(AbstractFormSubmitEvent());
                             }
                           },
-                          text: 'Save',
+                          text: context.translations.save,
                           isLoading: todoUpdateState.isSubmitting,
                           color: context.theme.primaryColor,
                         ),

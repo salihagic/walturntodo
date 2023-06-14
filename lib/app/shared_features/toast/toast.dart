@@ -1,11 +1,11 @@
+import 'package:abstract_bloc/abstract_bloc.dart';
 import 'package:walturntodo/_all.dart';
 
 abstract class IToast {
   void success({String? message, Widget? child, bool showIcon = true});
   void validation({String? message, Widget? child});
   void error({String? message, Widget? child, bool showIcon = true});
-  void showExceptionMessage(
-      AppLocalizations appLocalizations, BaseException exception);
+  void showExceptionMessage(AppLocalizations appLocalizations, BaseException exception);
 }
 
 class Toast implements IToast {
@@ -45,13 +45,11 @@ class Toast implements IToast {
   }
 
   @override
-  void showExceptionMessage(
-      AppLocalizations appLocalizations, BaseException exception) {
+  void showExceptionMessage(AppLocalizations appLocalizations, BaseException exception) {
     final messages = List<String>.from(exception.messages);
 
     if (messages.isEmpty) {
-      messages.add(
-          _getDefaultErrorMessageForException(appLocalizations, exception));
+      messages.add(_getDefaultErrorMessageForException(appLocalizations, exception));
     }
 
     final message = messages.join('\n');
@@ -77,8 +75,7 @@ class Toast implements IToast {
     }
   }
 
-  String _getDefaultErrorMessageForException(
-      AppLocalizations appLocalizations, BaseException exception) {
+  String _getDefaultErrorMessageForException(AppLocalizations appLocalizations, BaseException exception) {
     if (exception is ServerErrorException) {
       return appLocalizations.there_was_a_server_error_please_try_again_later;
     }
@@ -86,8 +83,7 @@ class Toast implements IToast {
       return appLocalizations.there_was_a_network_error_please_try_again_later;
     }
     if (exception is ValidationException) {
-      return appLocalizations
-          .there_was_a_validation_error_please_fix_and_try_again;
+      return appLocalizations.there_was_a_validation_error_please_fix_and_try_again;
     }
 
     return appLocalizations.there_was_an_error;

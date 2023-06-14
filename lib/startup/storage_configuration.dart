@@ -8,9 +8,6 @@ class StorageConfiguration {
     if (services.get<AppSettings>().resetStorageOnRestart) {
       await storageRepository.clear();
     }
-    if (services.get<AppSettings>().loggingOptions.logStorage) {
-      await storageRepository.log();
-    }
 
     services.registerSingleton<IStorageRepository>(storageRepository);
   }

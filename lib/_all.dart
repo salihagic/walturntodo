@@ -8,7 +8,6 @@ export 'package:flutter_gen/gen_l10n/app_localizations.dart';
 export 'package:flutter/services.dart';
 
 //Packages
-export 'package:rest_api_client/rest_api_client.dart';
 export 'package:storage_repository/storage_repository.dart';
 export 'package:gap/gap.dart';
 export 'package:get_it/get_it.dart';

@@ -8,14 +8,10 @@ class BlocsConfiguration {
 
   static void configureSingletons() {
     services.registerSingleton(
-      AppBloc(),
-    );
-    services.registerSingleton(
       ConnectivityBloc(),
     );
     services.registerSingleton(
       LocalizationBloc(
-        restApiClient: services.get<IRestApiClient>(),
         storageRepository: services.get<IStorageRepository>(),
       ),
     );
