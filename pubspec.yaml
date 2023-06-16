@@ -16,14 +16,9 @@ dependencies:
   connectivity_plus: ^4.0.1
   firebase_core: ^2.13.1
   flutter_slidable: ^3.0.0
-  flutter_svg: ^2.0.7
   gap: ^3.0.0
   get_it: ^7.6.0
-  hive: ^2.2.3
-  hive_generator: ^2.0.0
   intl: ^0.18.0
-  json_annotation: ^4.8.1
-  octo_image: ^1.0.2
   storage_repository: ^1.1.10
 
 dev_dependencies:
@@ -31,16 +26,10 @@ dev_dependencies:
     sdk: flutter
   build_runner: ^2.4.5
   flutter_lints: ^2.0.1
-  freezed: ^2.3.5
-  json_serializable: ^6.7.0
 
 flutter:
   generate: true
   uses-material-design: true
-  fonts:
-    - family: AppIcons
-      fonts:
-        - asset: assets/icons/fonts/AppIcons.ttf
 
   assets:
     - assets/images/
